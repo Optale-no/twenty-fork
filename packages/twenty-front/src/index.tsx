@@ -6,6 +6,7 @@ import 'twenty-ui/style.css';
 import 'twenty-ui/theme-light.css';
 import 'twenty-ui/theme-dark.css';
 import './index.css';
+import './optale-brand.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') ?? document.body,

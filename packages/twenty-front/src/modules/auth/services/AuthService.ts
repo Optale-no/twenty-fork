@@ -14,7 +14,7 @@ import {
 } from '~/generated-metadata/graphql';
 import { isUndefinedOrNull } from '~/utils/isUndefinedOrNull';
 
-const logger = loggerLink(() => 'Twenty-Refresh');
+const logger = loggerLink(() => 'Optale CRM-Refresh');
 
 const renewTokenMutation = async (
   uri: string | undefined,

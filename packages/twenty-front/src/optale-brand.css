@@ -1,0 +1,87 @@
+/* Optale CRM brand override layer (Solar Eclipse v3, approved 2026-04-19)
+ *
+ * Loaded AFTER twenty-ui/style.css + theme-light.css + theme-dark.css from index.tsx,
+ * so these rules win without us editing the upstream theme constants directly.
+ * Keeps rebase pain low — to refresh against upstream, just rebase main, no merge
+ * conflicts in this file because upstream never touches it.
+ */
+
+:root,
+.light,
+.dark {
+  --accent-stop-1: #ff4f81;
+  --accent-stop-2: #ff5c5c;
+  --accent-stop-3: #ff6b2c;
+  --accent-gradient: linear-gradient(90deg, #ff4f81 0%, #ff5c5c 50%, #ff6b2c 100%);
+  --accent-gradient-soft: linear-gradient(90deg, rgba(255, 79, 129, 0.18) 0%, rgba(255, 92, 92, 0.18) 50%, rgba(255, 107, 44, 0.18) 100%);
+  --cream: #faf8f4;
+  --void-0: #0a0a0a;
+  --void-1: #0f0d0b;
+  --void-2: #1a1714;
+  --void-3: #221d18;
+}
+
+/* Body font swap to Optale trinity */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, pre, .font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace !important;
+}
+
+/* Primary CTA buttons — full gradient fill + cream text */
+button[data-variant="primary"],
+button.primary,
+[class*="StyledPrimaryButton"],
+[class*="ButtonPrimary"] {
+  background: var(--accent-gradient) !important;
+  color: var(--cream) !important;
+  border: none !important;
+}
+
+button[data-variant="primary"]:hover,
+button.primary:hover,
+[class*="StyledPrimaryButton"]:hover,
+[class*="ButtonPrimary"]:hover {
+  background: var(--accent-gradient) !important;
+  filter: brightness(1.1);
+}
+
+/* Secondary buttons — gradient text on transparent */
+button[data-variant="secondary"][class*="ghost"],
+[class*="StyledGhostButton"] {
+  background: transparent !important;
+  background-image: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Active nav indicator — 2px gradient underline + soft tint */
+[aria-current="page"],
+[aria-selected="true"],
+[data-active="true"] {
+  position: relative;
+  background: var(--accent-gradient-soft) !important;
+}
+[aria-current="page"]::after,
+[aria-selected="true"]::after,
+[data-active="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+}
+
+/* Authelia-protected so Authelia login is BEFORE Twenty's. Tweak login surface anyway: */
+[class*="LoginCard"],
+[class*="SignInUp"] {
+  background: var(--void-1) !important;
+  color: var(--cream);
+}

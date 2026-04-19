@@ -1,0 +1,8 @@
+upstream_repo: github.com/twentyhq/twenty
+upstream_branch: main
+upstream_commit: 1f3defa7b35530e1584f0267a49fcfd9373954a6
+upstream_commit_date: 2026-04-18 21:28:59 +0200
+forked_at: 2026-04-19
+forked_by: Optale-no
+fork_repo: github.com/Optale-no/twenty-fork
+license: AGPL-3.0 (preserved from upstream)
