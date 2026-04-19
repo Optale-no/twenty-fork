@@ -2708,8 +2708,8 @@ msgstr "מאת {author}"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "על ידי שימוש ב-Twenty, אתה מסכים ל"
+msgid "By using Optale CRM, you agree to the"
+msgstr "על ידי שימוש ב-Optale CRM, אתה מסכים ל"
 
 #. js-lingui-id: Yx41df
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
@@ -3075,8 +3075,8 @@ msgstr "בדוק את תיבת הדואר שלך כדי לאמת את כתובת
 
 #. js-lingui-id: SxwQE8
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "שגיאת חיבור במעמד תשלום. בבקשה נסה שנית או צור קשר עם צוות Twenty"
+msgid "Checkout session error. Please retry or contact Optale CRM team"
+msgstr "שגיאת חיבור במעמד תשלום. בבקשה נסה שנית או צור קשר עם צוות Optale CRM"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -6148,8 +6148,8 @@ msgstr "שגיאה בביטול החלפת תכנית."
 
 #. js-lingui-id: QmR+2U
 #: src/modules/settings/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "שגיאה בעת סיום תקופת הניסיון. אנא פנה לצוות Twenty."
+msgid "Error while ending trial period. Please contact Optale CRM team."
+msgstr "שגיאה בעת סיום תקופת הניסיון. אנא פנה לצוות Optale CRM."
 
 #. js-lingui-id: 5g78zo
 #: src/pages/settings/members/SettingsWorkspaceMember.tsx
@@ -10967,8 +10967,8 @@ msgstr "שם עמוד"
 
 #. js-lingui-id: NRvxzv
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
-msgstr "הדף לא נמצא | Twenty"
+msgid "Page Not Found | Optale CRM"
+msgstr "הדף לא נמצא | Optale CRM"
 
 #. js-lingui-id: sF+Xp9
 #: src/pages/settings/security/event-logs/components/EventLogTableSelector.tsx
@@ -13942,8 +13942,8 @@ msgstr "סנכרן עם Outlook"
 
 #. js-lingui-id: +9x4tK
 #: src/pages/onboarding/SyncEmails.tsx
-msgid "Sync your Emails and Calendar with Twenty. Choose your privacy settings."
-msgstr "סנכרן את הדוא\"ל והיומן שלך עם Twenty. בחר את הגדרות הפרטיות שלך."
+msgid "Sync your Emails and Calendar with Optale CRM. Choose your privacy settings."
+msgstr "סנכרן את הדוא\"ל והיומן שלך עם Optale CRM. בחר את הגדרות הפרטיות שלך."
 
 #. js-lingui-id: N2FcBE
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
@@ -14898,8 +14898,8 @@ msgstr "טורקיז"
 
 #. js-lingui-id: JnaRPe
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
-msgid "Twenty fields"
-msgstr "שדות Twenty"
+msgid "Optale CRM fields"
+msgstr "שדות Optale CRM"
 
 #. js-lingui-id: YIjS4q
 #: src/modules/ai/components/SettingsAgentModelCapabilities.tsx
@@ -15967,8 +15967,8 @@ msgstr ""
 
 #. js-lingui-id: nTuObL
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
-msgstr "ברוכים הבאים ל-Twenty"
+msgid "Welcome to Optale CRM"
+msgstr "ברוכים הבאים ל-Optale CRM"
 
 #. js-lingui-id: t8ZvkC
 #: src/pages/auth/SignInUp.tsx

@@ -2708,8 +2708,8 @@ msgstr "autor: {author}"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Używając Twenty, zgadzasz się na"
+msgid "By using Optale CRM, you agree to the"
+msgstr "Używając Optale CRM, zgadzasz się na"
 
 #. js-lingui-id: Yx41df
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
@@ -3075,8 +3075,8 @@ msgstr "Sprawdź skrzynkę odbiorczą, aby zweryfikować nowy adres e-mail."
 
 #. js-lingui-id: SxwQE8
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Błąd sesji przy realizacji zakupu. Spróbuj ponownie lub skontaktuj się z zespołem Twenty"
+msgid "Checkout session error. Please retry or contact Optale CRM team"
+msgstr "Błąd sesji przy realizacji zakupu. Spróbuj ponownie lub skontaktuj się z zespołem Optale CRM"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -6148,8 +6148,8 @@ msgstr "Błąd podczas anulowania przełączania planu."
 
 #. js-lingui-id: QmR+2U
 #: src/modules/settings/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Błąd podczas kończenia okresu próbnego. Proszę skontaktować się z zespołem Twenty."
+msgid "Error while ending trial period. Please contact Optale CRM team."
+msgstr "Błąd podczas kończenia okresu próbnego. Proszę skontaktować się z zespołem Optale CRM."
 
 #. js-lingui-id: 5g78zo
 #: src/pages/settings/members/SettingsWorkspaceMember.tsx
@@ -10967,8 +10967,8 @@ msgstr "Nazwa strony"
 
 #. js-lingui-id: NRvxzv
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
-msgstr "Nie znaleziono strony | Twenty"
+msgid "Page Not Found | Optale CRM"
+msgstr "Nie znaleziono strony | Optale CRM"
 
 #. js-lingui-id: sF+Xp9
 #: src/pages/settings/security/event-logs/components/EventLogTableSelector.tsx
@@ -13942,8 +13942,8 @@ msgstr "Synchronizuj z Outlookiem"
 
 #. js-lingui-id: +9x4tK
 #: src/pages/onboarding/SyncEmails.tsx
-msgid "Sync your Emails and Calendar with Twenty. Choose your privacy settings."
-msgstr "Synchronizuj swoje E-maile i Kalendarz z Twenty. Wybierz ustawienia prywatności."
+msgid "Sync your Emails and Calendar with Optale CRM. Choose your privacy settings."
+msgstr "Synchronizuj swoje E-maile i Kalendarz z Optale CRM. Wybierz ustawienia prywatności."
 
 #. js-lingui-id: N2FcBE
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
@@ -14898,8 +14898,8 @@ msgstr "Turkusowy"
 
 #. js-lingui-id: JnaRPe
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
-msgid "Twenty fields"
-msgstr "Pola Twenty"
+msgid "Optale CRM fields"
+msgstr "Pola Optale CRM"
 
 #. js-lingui-id: YIjS4q
 #: src/modules/ai/components/SettingsAgentModelCapabilities.tsx
@@ -15967,8 +15967,8 @@ msgstr ""
 
 #. js-lingui-id: nTuObL
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
-msgstr "Witaj w Twenty"
+msgid "Welcome to Optale CRM"
+msgstr "Witaj w Optale CRM"
 
 #. js-lingui-id: t8ZvkC
 #: src/pages/auth/SignInUp.tsx

@@ -49,8 +49,8 @@ msgstr "Spațiul de lucru va fi dezactivat în {remainingDays} {dayOrDays}, iar 
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Dacă doriți să continuați utilizarea Twenty, vă rugăm să vă actualizați abonamentul în următoarele {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Dacă doriți să continuați utilizarea Optale CRM, vă rugăm să vă actualizați abonamentul în următoarele {remainingDays} {dayOrDays}."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "Email de test"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Alăturați-vă echipei pe Twenty"
+msgid "Join your team on Optale CRM"
+msgstr "Alăturați-vă echipei pe Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -125,8 +125,8 @@ msgstr "Dacă nu ați inițiat această schimbare, vă rugăm să contactați im
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Conectați-vă la Twenty"
+msgid "Connect to Optale CRM"
+msgstr "Conectați-vă la Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -170,8 +170,8 @@ msgstr "Toate datele din acest spațiu de lucru au fost șterse permanent."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Dacă doriți să folosiți din nou Twenty, puteți crea un spațiu de lucru nou."
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
+msgstr "Dacă doriți să folosiți din nou Optale CRM, puteți crea un spațiu de lucru nou."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -180,8 +180,8 @@ msgstr "Creează un nou spațiu de lucru"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Ce este Twenty?"
+msgid "What is Optale CRM?"
+msgstr "Ce este Optale CRM?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -195,8 +195,8 @@ msgstr "Site web"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Vizitați site-ul Twenty"
+msgid "Visit Optale's website"
+msgstr "Vizitați site-ul Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -205,8 +205,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Vizitați depozitul GitHub al Twenty"
+msgid "Visit Optale's GitHub repository"
+msgstr "Vizitați depozitul GitHub al Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -215,8 +215,8 @@ msgstr "Ghidul Utilizatorului"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Citiți ghidul utilizatorului Twenty"
+msgid "Read Optale's user guide"
+msgstr "Citiți ghidul utilizatorului Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -225,13 +225,13 @@ msgstr "Dezvoltatori"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Vizitați documentația pentru dezvoltatori a Twenty"
+msgid "Visit Optale's developer documentation"
+msgstr "Vizitați documentația pentru dezvoltatori a Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Corporație de Beneficiu Public"
+msgid "Optale CRM.com, Public Benefit Corporation"
+msgstr "Optale CRM.com, Corporație de Beneficiu Public"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

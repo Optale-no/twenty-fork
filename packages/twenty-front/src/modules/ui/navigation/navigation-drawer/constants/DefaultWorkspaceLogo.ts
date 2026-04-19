@@ -1,2 +1,4 @@
 export const DEFAULT_WORKSPACE_LOGO =
-  'https://twentyhq.github.io/placeholder-images/workspaces/twenty-logo.png';
+  typeof window !== 'undefined' && window.location?.origin
+    ? `${window.location.origin}/optale-favicon.svg`
+    : 'https://crm.optale.no/optale-favicon.svg';

@@ -49,7 +49,7 @@ msgstr "ワークスペースは{remainingDays} {dayOrDays}後に無効化され
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
 msgstr "Twentyを引き続きご利用になる場合は、{remainingDays} {dayOrDays}以内にサブスクリプションを更新してください。"
 
 #. js-lingui-explicit-id
@@ -75,7 +75,7 @@ msgstr "テストメール"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
+msgid "Join your team on Optale CRM"
 msgstr "Twentyでチームに参加"
 
 #. js-lingui-explicit-id
@@ -125,7 +125,7 @@ msgstr "この変更を行っていない場合は、すぐにワークスペー
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
+msgid "Connect to Optale CRM"
 msgstr "Twentyに接続"
 
 #. js-lingui-explicit-id
@@ -170,7 +170,7 @@ msgstr "このワークスペースのすべてのデータは永久に削除さ
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
 msgstr "Twentyを再度使用するには、新しいワークスペースを作成してください。"
 
 #. js-lingui-explicit-id
@@ -180,7 +180,7 @@ msgstr "新しいワークスペースを作成"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
+msgid "What is Optale CRM?"
 msgstr "Twentyとは？"
 
 #. js-lingui-explicit-id
@@ -195,7 +195,7 @@ msgstr "ウェブサイト"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
+msgid "Visit Optale's website"
 msgstr "Twentyのウェブサイトを訪問"
 
 #. js-lingui-explicit-id
@@ -205,7 +205,7 @@ msgstr "ギットハブ"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
+msgid "Visit Optale's GitHub repository"
 msgstr "TwentyのGitHubリポジトリを訪問"
 
 #. js-lingui-explicit-id
@@ -215,7 +215,7 @@ msgstr "ユーザーガイド"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
+msgid "Read Optale's user guide"
 msgstr "Twentyのユーザーガイドを読む"
 
 #. js-lingui-explicit-id
@@ -225,13 +225,13 @@ msgstr "開発者"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
+msgid "Visit Optale's developer documentation"
 msgstr "Twentyの開発者向けドキュメントを訪問"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, 公益企業"
+msgid "Optale CRM.com, Public Benefit Corporation"
+msgstr "Optale CRM.com, 公益企業"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

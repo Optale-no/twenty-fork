@@ -44,7 +44,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -70,7 +70,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
+msgid "Join your team on Optale CRM"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -120,7 +120,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
+msgid "Connect to Optale CRM"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -165,7 +165,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -175,7 +175,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
+msgid "What is Optale CRM?"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -190,7 +190,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
+msgid "Visit Optale's website"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -200,7 +200,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
+msgid "Visit Optale's GitHub repository"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -210,7 +210,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
+msgid "Read Optale's user guide"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -220,12 +220,12 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
+msgid "Visit Optale's developer documentation"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
+msgid "Optale CRM.com, Public Benefit Corporation"
 msgstr ""
 
 #. js-lingui-explicit-id

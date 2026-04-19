@@ -5,6 +5,7 @@ import { isDefined } from 'twenty-shared/utils';
 import { useIsMobile } from 'twenty-ui/utilities';
 import { type NavigationMenuItem } from '~/generated-metadata/graphql';
 
+import { closedNavigationMenuItemFolderIdsState } from '@/navigation-menu-item/common/states/closedNavigationMenuItemFolderIdsState';
 import { currentNavigationMenuItemFolderIdState } from '@/navigation-menu-item/common/states/currentNavigationMenuItemFolderIdState';
 import { lastClickedNavigationMenuItemIdState } from '@/navigation-menu-item/common/states/lastClickedNavigationMenuItemIdState';
 import { openNavigationMenuItemFolderIdsState } from '@/navigation-menu-item/common/states/openNavigationMenuItemFolderIdsState';
@@ -32,6 +33,10 @@ export const useNavigationMenuItemFolderOpenState = ({
 
   const [openNavigationMenuItemFolderIds, setOpenNavigationMenuItemFolderIds] =
     useAtomState(openNavigationMenuItemFolderIdsState);
+  const [
+    closedNavigationMenuItemFolderIds,
+    setClosedNavigationMenuItemFolderIds,
+  ] = useAtomState(closedNavigationMenuItemFolderIdsState);
   const setCurrentNavigationMenuItemFolderId = useSetAtomState(
     currentNavigationMenuItemFolderIdState,
   );
@@ -43,21 +48,37 @@ export const useNavigationMenuItemFolderOpenState = ({
   );
 
   const isExplicitlyOpen = openNavigationMenuItemFolderIds.includes(folderId);
+  const isExplicitlyClosed =
+    closedNavigationMenuItemFolderIds.includes(folderId);
   const hasActiveChild = folderChildrenNavigationMenuItems.some((item) =>
     activeNavigationMenuItemIds.includes(item.id),
   );
-  const isOpen = isExplicitlyOpen || hasActiveChild;
+  // Optale Orbital: honor explicit user collapse even when hasActiveChild
+  // (upstream auto-open trapped folders open while viewing their children).
+  const isOpen = isExplicitlyClosed
+    ? false
+    : isExplicitlyOpen || hasActiveChild;
 
   const handleToggle = () => {
     if (isMobile) {
       setCurrentNavigationMenuItemFolderId((prev) =>
         prev === folderId ? null : folderId,
       );
-    } else {
+    } else if (isOpen) {
+      // Closing: mark explicitly closed, clear explicit-open
       setOpenNavigationMenuItemFolderIds((current) =>
-        current.includes(folderId)
-          ? current.filter((id) => id !== folderId)
-          : [...current, folderId],
+        current.filter((id) => id !== folderId),
+      );
+      setClosedNavigationMenuItemFolderIds((current) =>
+        current.includes(folderId) ? current : [...current, folderId],
+      );
+    } else {
+      // Opening: mark explicitly open, clear explicit-closed
+      setOpenNavigationMenuItemFolderIds((current) =>
+        current.includes(folderId) ? current : [...current, folderId],
+      );
+      setClosedNavigationMenuItemFolderIds((current) =>
+        current.filter((id) => id !== folderId),
       );
     }
 

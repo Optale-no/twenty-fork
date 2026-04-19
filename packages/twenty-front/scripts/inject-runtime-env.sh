@@ -8,18 +8,18 @@ CONFIG_BLOCK=$(cat << EOF
         REACT_APP_SERVER_BASE_URL: "$REACT_APP_SERVER_BASE_URL"
       };
     </script>
-    <!-- END: Twenty Config -->
+    <!-- END: Optale CRM Config -->
 EOF
 )
 # Use sed to replace the config block in index.html
 # Using pattern space to match across multiple lines
 echo "$CONFIG_BLOCK" | sed -i.bak '
-  /<!-- BEGIN: Twenty Config -->/,/<!-- END: Twenty Config -->/{
-    /<!-- BEGIN: Twenty Config -->/!{
-      /<!-- END: Twenty Config -->/!d
+  /<!-- BEGIN: Optale CRM Config -->/,/<!-- END: Optale CRM Config -->/{
+    /<!-- BEGIN: Optale CRM Config -->/!{
+      /<!-- END: Optale CRM Config -->/!d
     }
-    /<!-- BEGIN: Twenty Config -->/r /dev/stdin
-    /<!-- END: Twenty Config -->/d
+    /<!-- BEGIN: Optale CRM Config -->/r /dev/stdin
+    /<!-- END: Optale CRM Config -->/d
   }
 ' build/index.html
 rm -f build/index.html.bak

@@ -49,8 +49,8 @@ msgstr "A munkaterület {remainingDays} {dayOrDays} múlva lesz deaktiválva, é
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Amennyiben szeretné folytatni a Twenty használatát, kérjük frissítse előfizetését a következő {remainingDays} {dayOrDays} időszakban."
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Amennyiben szeretné folytatni a Optale CRM használatát, kérjük frissítse előfizetését a következő {remainingDays} {dayOrDays} időszakban."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,7 +75,7 @@ msgstr "Teszt e-mail"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
+msgid "Join your team on Optale CRM"
 msgstr "Csatlakozzon a csapatához a Twentyn"
 
 #. js-lingui-explicit-id
@@ -125,7 +125,7 @@ msgstr "Amennyiben Ön nem kezdeményezte ezt a változtatást, kérjük azonnal
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
+msgid "Connect to Optale CRM"
 msgstr "Csatlakozás a Twentyhez"
 
 #. js-lingui-explicit-id
@@ -170,8 +170,8 @@ msgstr "A munkaterület minden adata végérvényesen törlésre került."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Ha újra szeretné használni a Twenty-t, létrehozhat egy új munkaterületet."
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
+msgstr "Ha újra szeretné használni a Optale CRM-t, létrehozhat egy új munkaterületet."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -180,8 +180,8 @@ msgstr "Hozzon létre új munkaterületet"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Mi az a Twenty?"
+msgid "What is Optale CRM?"
+msgstr "Mi az a Optale CRM?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -195,8 +195,8 @@ msgstr "Weboldal"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Látogasson el a Twenty weboldalára"
+msgid "Visit Optale's website"
+msgstr "Látogasson el a Optale CRM weboldalára"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -205,8 +205,8 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Látogasson el a Twenty GitHub tárházához"
+msgid "Visit Optale's GitHub repository"
+msgstr "Látogasson el a Optale CRM GitHub tárházához"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -215,8 +215,8 @@ msgstr "Felhasználói útmutató"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Olvassa el a Twenty felhasználói útmutatóját"
+msgid "Read Optale's user guide"
+msgstr "Olvassa el a Optale CRM felhasználói útmutatóját"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
@@ -225,13 +225,13 @@ msgstr "Fejlesztők"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Látogasson el a Twenty fejlesztői dokumentációjához"
+msgid "Visit Optale's developer documentation"
+msgstr "Látogasson el a Optale CRM fejlesztői dokumentációjához"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Közhasznú Vállalat"
+msgid "Optale CRM.com, Public Benefit Corporation"
+msgstr "Optale CRM.com, Közhasznú Vállalat"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

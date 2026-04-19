@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
 
+inject_runtime_env() {
+    INDEX_HTML=/app/packages/twenty-server/dist/front/index.html
+    if [ -n "${REACT_APP_SERVER_BASE_URL}" ] && [ -f "${INDEX_HTML}" ]; then
+        sed -i "s|// This will be overwritten|REACT_APP_SERVER_BASE_URL: \"${REACT_APP_SERVER_BASE_URL}\"|" "${INDEX_HTML}" || true
+    fi
+}
+
 setup_and_migrate_db() {
     if [ "${DISABLE_DB_MIGRATIONS}" = "true" ]; then
         echo "Database setup and migrations are disabled, skipping..."
@@ -37,6 +44,7 @@ register_background_jobs() {
     fi
 }
 
+inject_runtime_env
 setup_and_migrate_db
 register_background_jobs
 

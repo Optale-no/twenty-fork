@@ -49,8 +49,8 @@ msgstr "Arbetsutrymmet kommer att inaktiveras om {remainingDays} {dayOrDays}, oc
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Om du vill fortsätta använda Twenty, vänligen uppdatera din prenumeration inom de nästa {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr "Om du vill fortsätta använda Optale CRM, vänligen uppdatera din prenumeration inom de nästa {remainingDays} {dayOrDays}."
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -75,8 +75,8 @@ msgstr "Test e-post"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Gå med i ditt team på Twenty"
+msgid "Join your team on Optale CRM"
+msgstr "Gå med i ditt team på Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -125,8 +125,8 @@ msgstr "Om du inte initierade denna förändring, vänligen kontakta ägaren av 
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Anslut till Twenty"
+msgid "Connect to Optale CRM"
+msgstr "Anslut till Optale CRM"
 
 #. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
@@ -170,8 +170,8 @@ msgstr "Alla data i det här arbetsutrymmet har raderats permanent."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Om du vill använda Twenty igen kan du skapa ett nytt arbetsutrymme."
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
+msgstr "Om du vill använda Optale CRM igen kan du skapa ett nytt arbetsutrymme."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -180,8 +180,8 @@ msgstr "Skapa en ny arbetsyta"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Vad är Twenty?"
+msgid "What is Optale CRM?"
+msgstr "Vad är Optale CRM?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -195,7 +195,7 @@ msgstr "Webbplats"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
+msgid "Visit Optale's website"
 msgstr "Besök Twentys webbplats"
 
 #. js-lingui-explicit-id
@@ -205,7 +205,7 @@ msgstr "Github"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
+msgid "Visit Optale's GitHub repository"
 msgstr "Besök Twentys GitHub-repositorium"
 
 #. js-lingui-explicit-id
@@ -215,7 +215,7 @@ msgstr "Användarguide"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
+msgid "Read Optale's user guide"
 msgstr "Läs Twentys användarguide"
 
 #. js-lingui-explicit-id
@@ -225,13 +225,13 @@ msgstr "Utvecklare"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
+msgid "Visit Optale's developer documentation"
 msgstr "Besök Twentys utvecklardokumentation"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Public Benefit Corporation"
+msgid "Optale CRM.com, Public Benefit Corporation"
+msgstr "Optale CRM.com, Public Benefit Corporation"
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx

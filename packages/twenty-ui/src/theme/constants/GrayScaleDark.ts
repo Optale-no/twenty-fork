@@ -1,14 +1,16 @@
+// Optale Orbital: void canvas + luminance-step grays.
+// gray1 (primary bg) = pure void. gray12 (primaryInverted) = signal-green.
 export const GRAY_SCALE_DARK = {
-  gray1: 'color(display-p3 0.09 0.09 0.09)',
-  gray2: 'color(display-p3 0.106 0.106 0.106)',
-  gray3: 'color(display-p3 0.098 0.098 0.098)',
-  gray4: 'color(display-p3 0.114 0.114 0.114)',
-  gray5: 'color(display-p3 0.133 0.133 0.133)',
-  gray6: 'color(display-p3 0.282 0.282 0.282)',
-  gray7: 'color(display-p3 0.298 0.298 0.298)',
-  gray8: 'color(display-p3 0.4 0.4 0.4)',
-  gray9: 'color(display-p3 0.506 0.506 0.506)',
-  gray10: 'color(display-p3 0.482 0.482 0.482)',
-  gray11: 'color(display-p3 0.702 0.702 0.702)',
-  gray12: 'color(display-p3 0.922 0.922 0.922)',
+  gray1: '#000000',
+  gray2: 'rgba(255, 255, 255, 0.02)',
+  gray3: 'rgba(255, 255, 255, 0.03)',
+  gray4: 'rgba(255, 255, 255, 0.04)',
+  gray5: 'rgba(255, 255, 255, 0.06)',
+  gray6: 'rgba(255, 255, 255, 0.08)',
+  gray7: 'rgba(255, 255, 255, 0.12)',
+  gray8: 'rgba(240, 240, 245, 0.40)',
+  gray9: 'rgba(240, 240, 245, 0.55)',
+  gray10: 'rgba(240, 240, 245, 0.64)',
+  gray11: 'rgba(240, 240, 245, 0.82)',
+  gray12: '#00ffaa',
 };

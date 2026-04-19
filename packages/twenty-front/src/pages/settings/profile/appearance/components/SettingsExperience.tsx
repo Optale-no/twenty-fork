@@ -1,17 +1,18 @@
 import { SettingsPageContainer } from '@/settings/components/SettingsPageContainer';
 import { FormatPreferencesSettings } from '@/settings/experience/components/FormatPreferencesSettings';
 import { SubMenuTopBarContainer } from '@/ui/layout/page/components/SubMenuTopBarContainer';
-import { useColorScheme } from '@/ui/theme/hooks/useColorScheme';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { SettingsPath } from 'twenty-shared/types';
 import { getSettingsPath } from 'twenty-shared/utils';
 import { H2Title } from 'twenty-ui/display';
-import { ColorSchemePicker } from 'twenty-ui/input';
 import { Section } from 'twenty-ui/layout';
 import { LocalePicker } from '~/pages/settings/profile/appearance/components/LocalePicker';
 
+// Optale Orbital fork: appearance picker removed. The orbital profile is
+// dark-only — light mode would misrender the entire palette (void black,
+// signal-green accents, luminance-step surfaces). Locale + format preferences
+// remain editable.
 export const SettingsExperience = () => {
-  const { colorScheme, setColorScheme } = useColorScheme();
   const { t } = useLingui();
 
   return (
@@ -27,17 +28,6 @@ export const SettingsExperience = () => {
     >
       <SettingsPageContainer>
         <Section>
-          <H2Title title={t`Appearance`} />
-          <ColorSchemePicker
-            value={colorScheme}
-            onChange={setColorScheme}
-            lightLabel={t`Light`}
-            darkLabel={t`Dark`}
-            systemLabel={t`System settings`}
-          />
-        </Section>
-
-        <Section>
           <H2Title
             title={t`Language`}
             description={t`Select your preferred language`}
@@ -52,7 +42,6 @@ export const SettingsExperience = () => {
           />
           <FormatPreferencesSettings />
         </Section>
-        {/* Unified into FormatPreferencesSettings */}
       </SettingsPageContainer>
     </SubMenuTopBarContainer>
   );

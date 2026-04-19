@@ -773,9 +773,21 @@ export class WorkspaceService extends TypeOrmQueryService<WorkspaceEntity> {
     try {
       await queryRunner.startTransaction();
 
-      await prefillCompanies(queryRunner.manager, schemaName);
+      // OPTALE FORK: skip demo data prefills (companies, people, opportunities, dashboards)
+      // Workflows + logic functions remain seeded (default automation infrastructure)
+      // Re-enable demo data with OPTALE_SKIP_DEMO_DATA=false
+      const skipDemoData = process.env.OPTALE_SKIP_DEMO_DATA !== 'false';
 
-      await prefillPeople(queryRunner.manager, schemaName);
+      if (!skipDemoData) {
+        await prefillCompanies(queryRunner.manager, schemaName);
+        await prefillPeople(queryRunner.manager, schemaName);
+        await prefillOpportunities(queryRunner.manager, schemaName);
+        await prefillDashboards(
+          queryRunner.manager,
+          schemaName,
+          flatPageLayoutMaps,
+        );
+      }
 
       await prefillWorkflows(
         queryRunner.manager,
@@ -783,14 +795,6 @@ export class WorkspaceService extends TypeOrmQueryService<WorkspaceEntity> {
         schemaName,
         flatObjectMetadataMaps,
         flatFieldMetadataMaps,
-      );
-
-      await prefillOpportunities(queryRunner.manager, schemaName);
-
-      await prefillDashboards(
-        queryRunner.manager,
-        schemaName,
-        flatPageLayoutMaps,
       );
 
       await queryRunner.commitTransaction();

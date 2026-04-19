@@ -1,0 +1,153 @@
+/* ============================================================================
+   Optale Orbital Infrastructure — canonical design tokens
+   Ref: Business/Soul/visual-profile-orbital-infrastructure.md (OPT-V1-ORBITAL)
+   Live: https://visual-profile-orbital-v1-deploy.vercel.app/
+   Decision: 2026-04-19 — Orbital replaces Solar Eclipse v3
+
+   IMPORT this file at the top of every Optale fork/app stylesheet. Do NOT
+   duplicate these values locally — if a fork needs a variation, propose an
+   amendment to the spec and update this file once. Single source of truth.
+   ============================================================================ */
+
+@import url("https://api.fontshare.com/v2/css?f[]=sentient@300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+:root {
+  /* --- Canvas + surfaces ------------------------------------------------ */
+  --color-void: #000000;
+  --color-surface-1: rgba(255, 255, 255, 0.02);   /* L1 — cards, chrome */
+  --color-surface-2: rgba(255, 255, 255, 0.04);   /* L2 — hover, nested */
+  --color-surface-3: rgba(255, 255, 255, 0.08);   /* L3 — active, focus */
+
+  /* --- Borders ---------------------------------------------------------- */
+  --border-subtle:   rgba(255, 255, 255, 0.05);   /* grid, dividers */
+  --border-standard: rgba(255, 255, 255, 0.08);   /* card outlines */
+  --border-emphasis: rgba(255, 255, 255, 0.14);   /* focused inputs */
+
+  /* --- Text ------------------------------------------------------------- */
+  --text-primary:   #f0f0f5;                      /* body */
+  --text-secondary: #a0a0ab;                      /* meta, captions */
+  --text-tertiary:  #71717a;                      /* disabled, idle */
+  --text-quaternary:#52525b;                      /* ghost labels */
+
+  /* --- Signals (semantic, not decorative) ------------------------------ */
+  --signal-green:   #00ffaa;   /* running, healthy, live, success */
+  --signal-gold:    #facc15;   /* attention, deploying, strategic emphasis */
+  --signal-alert:   #f36458;   /* error, incident, destructive */
+  /* NOTE: Electric blue retired 2026-04-19 per Thor. Hover = luminance step
+     (surface-1 → surface-3), NOT a color shift. See spec §2.           */
+
+  /* --- Glows (for status dots + telemetry emission only; not elevation) */
+  --glow-green: 0 0 8px rgba(0, 255, 170, 0.6);
+  --glow-gold:  0 0 8px rgba(250, 204, 21, 0.5);
+  --glow-alert: 0 0 8px rgba(243, 100, 88, 0.55);
+
+  /* --- Typography ------------------------------------------------------- */
+  --font-display: 'Sentient', 'Times New Roman', serif;
+  --font-ui:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  /* Display ladder (Sentient, negative tracking) */
+  --type-display-xxl: 700 clamp(4rem, 9vw, 8rem)/0.95 var(--font-display);
+  --type-display-xl:  700 clamp(3rem, 6vw, 5rem)/1.0  var(--font-display);
+  --type-display-lg:  600 clamp(2.25rem, 4vw, 3.5rem)/1.05 var(--font-display);
+  --type-display-md:  600 clamp(1.75rem, 3vw, 2.5rem)/1.1 var(--font-display);
+  --type-display-sm:  500 clamp(1.25rem, 2vw, 1.75rem)/1.2 var(--font-display);
+
+  /* Body ladder (Inter, natural tracking) */
+  --type-body-lg:   400 1.125rem/1.55 var(--font-ui);
+  --type-body:      400 1rem/1.55     var(--font-ui);
+  --type-body-sm:   400 0.875rem/1.5  var(--font-ui);
+  --type-meta:      400 0.8125rem/1.45 var(--font-ui);
+  --type-caption:   400 0.75rem/1.4   var(--font-ui);
+
+  /* Mono variants (JetBrains, technical labels; uppercase tracking 0.1em) */
+  --type-mono-sm:   500 0.75rem/1.2   var(--font-mono);
+  --type-mono-xs:   500 0.6875rem/1.15 var(--font-mono);
+  --type-telemetry: 500 0.625rem/1.0  var(--font-mono);   /* 10px pills */
+
+  /* --- Letterforms ----------------------------------------------------- */
+  --tracking-display: -0.04em;    /* Sentient compression */
+  --tracking-display-tight: -0.05em;
+  --tracking-body: 0;
+  --tracking-meta-upper: 0.1em;
+  --tracking-meta-upper-wide: 0.2em;
+
+  /* --- Radii (aerospace: hard or near-hard) --------------------------- */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;    /* cap — anything bigger belongs to Solar Eclipse era */
+
+  /* --- Spacing (8-point grid) ----------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+
+  /* --- Grid canvas ---------------------------------------------------- */
+  --grid-size: 60px;
+  --grid-bg:
+    linear-gradient(to right,  var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+
+  /* --- Motion --------------------------------------------------------- */
+  --motion-instant: 80ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-fast:    180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-medium:  320ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-slow:    520ms cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+/* Accessibility: fall-back to stillness */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Canonical body baseline — apply directly OR compose into your fork */
+body {
+  background-color: var(--color-void);
+  color: var(--text-primary);
+  font: var(--type-body);
+  font-feature-settings: "cv01", "ss03";
+  background-image: var(--grid-bg);
+  background-size: var(--grid-size) var(--grid-size);
+  margin: 0;
+}
+
+/* Canonical button primary (Inter, hard corners, signal-green default) */
+.btn-primary-orbital {
+  font: var(--type-mono-sm);
+  letter-spacing: var(--tracking-meta-upper);
+  text-transform: uppercase;
+  color: var(--color-void);
+  background-color: var(--signal-green);
+  border: none;
+  border-radius: var(--radius-xs);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition: filter var(--motion-fast), background-color var(--motion-fast);
+}
+.btn-primary-orbital:hover { filter: brightness(0.9); }
+.btn-primary-orbital:focus-visible { outline: 1px solid var(--text-primary); outline-offset: 2px; }
+.btn-primary-orbital:disabled { background-color: var(--color-surface-2); color: var(--text-tertiary); cursor: not-allowed; }
+
+/* Status dot primitive */
+.status-dot-orbital {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+}
+.status-dot-orbital[data-signal="live"]     { background: var(--signal-green); box-shadow: var(--glow-green); }
+.status-dot-orbital[data-signal="deploy"]   { background: var(--signal-gold);  box-shadow: var(--glow-gold); }
+.status-dot-orbital[data-signal="incident"] { background: var(--signal-alert); box-shadow: var(--glow-alert); }
+.status-dot-orbital[data-signal="idle"]     { background: var(--text-tertiary); }

@@ -1,0 +1,97 @@
+name: Optale CRM — Build & push to GHCR
+
+on:
+  push:
+    branches: [main, optale/main, master]
+    tags: ["v*-orbital-*"]
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: "Orbital revision number (e.g. 4 for v1.23.5-orbital-4)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  OWNER: optale-no
+  IMAGE_NAME: twenty-fork
+  REACT_APP_SERVER_BASE_URL: https://crm.optale.no
+
+concurrency:
+  group: optale-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build twenty-fork
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute version + tags
+        id: meta
+        env:
+          REV_INPUT: ${{ inputs.revision }}
+        run: |
+          VERSION=$(python3 -c "import json; print(json.load(open('package.json'))['version'])")
+          DATE=$(date -u '+%Y-%m-%d')
+          if [ -n "$REV_INPUT" ]; then
+            REV="$REV_INPUT"
+          else
+            REV=$(git log --oneline --since='2026-04-19' | wc -l)
+            [ "$REV" -lt 1 ] && REV=1
+          fi
+          TAG="v${VERSION}-orbital-${REV}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "date=${DATE}" >> "$GITHUB_OUTPUT"
+          echo "rev=${REV}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "Version=${VERSION} Date=${DATE} Rev=${REV} Tag=${TAG}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute image tags
+        id: image_tags
+        env:
+          REGISTRY_VAR: ${{ env.REGISTRY }}
+          OWNER_VAR: ${{ env.OWNER }}
+          IMAGE_NAME_VAR: ${{ env.IMAGE_NAME }}
+          TAG_VAR: ${{ steps.meta.outputs.tag }}
+          DATE_VAR: ${{ steps.meta.outputs.date }}
+          BRANCH_OK: ${{ github.ref == format('refs/heads/{0}', 'master') || github.ref == format('refs/heads/{0}', 'optale/main') }}
+        run: |
+          BASE="${REGISTRY_VAR}/${OWNER_VAR}/${IMAGE_NAME_VAR}"
+          TAGS="${BASE}:${TAG_VAR}"
+          if [ "$BRANCH_OK" = "true" ]; then
+            TAGS="${TAGS},${BASE}:latest"
+            TAGS="${TAGS},${BASE}:orbital-latest"
+          fi
+          echo "tags=${TAGS}" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: packages/twenty-docker/twenty/Dockerfile
+          target: twenty
+          push: true
+          tags: ${{ steps.image_tags.outputs.tags }}
+          build-args: |
+            APP_VERSION=${{ steps.meta.outputs.tag }}
+            REACT_APP_SERVER_BASE_URL=${{ env.REACT_APP_SERVER_BASE_URL }}
+          cache-from: type=gha,scope=optale-twenty
+          cache-to: type=gha,scope=optale-twenty,mode=max
+          platforms: linux/amd64

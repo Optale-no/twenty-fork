@@ -2708,8 +2708,8 @@ msgstr "od {author}"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Použitím Twenty souhlasíte s"
+msgid "By using Optale CRM, you agree to the"
+msgstr "Použitím Optale CRM souhlasíte s"
 
 #. js-lingui-id: Yx41df
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
@@ -3075,8 +3075,8 @@ msgstr "Zkontrolujte svou schránku a ověřte svou novou e-mailovou adresu."
 
 #. js-lingui-id: SxwQE8
 #: src/modules/settings/billing/hooks/useHandleCheckoutSession.ts
-msgid "Checkout session error. Please retry or contact Twenty team"
-msgstr "Chyba při relaci platby. Prosím zkuste to znovu nebo kontaktujte tým Twenty"
+msgid "Checkout session error. Please retry or contact Optale CRM team"
+msgstr "Chyba při relaci platby. Prosím zkuste to znovu nebo kontaktujte tým Optale CRM"
 
 #. js-lingui-id: SviKkE
 #: src/pages/settings/profile/appearance/components/LocalePicker.tsx
@@ -6148,8 +6148,8 @@ msgstr "Chyba při rušení změny plánu."
 
 #. js-lingui-id: QmR+2U
 #: src/modules/settings/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
-msgstr "Chyba při ukončování zkušební doby. Kontaktujte tým Twenty."
+msgid "Error while ending trial period. Please contact Optale CRM team."
+msgstr "Chyba při ukončování zkušební doby. Kontaktujte tým Optale CRM."
 
 #. js-lingui-id: 5g78zo
 #: src/pages/settings/members/SettingsWorkspaceMember.tsx
@@ -10967,8 +10967,8 @@ msgstr "Název stránky"
 
 #. js-lingui-id: NRvxzv
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
-msgstr "Stránka nenalezena | Twenty"
+msgid "Page Not Found | Optale CRM"
+msgstr "Stránka nenalezena | Optale CRM"
 
 #. js-lingui-id: sF+Xp9
 #: src/pages/settings/security/event-logs/components/EventLogTableSelector.tsx
@@ -13942,8 +13942,8 @@ msgstr "Synchronizovat s Outlook"
 
 #. js-lingui-id: +9x4tK
 #: src/pages/onboarding/SyncEmails.tsx
-msgid "Sync your Emails and Calendar with Twenty. Choose your privacy settings."
-msgstr "Synchronizujte své e-maily a kalendář s Twenty. Zvolte svá nastavení ochrany soukromí."
+msgid "Sync your Emails and Calendar with Optale CRM. Choose your privacy settings."
+msgstr "Synchronizujte své e-maily a kalendář s Optale CRM. Zvolte svá nastavení ochrany soukromí."
 
 #. js-lingui-id: N2FcBE
 #: src/modules/settings/accounts/components/SettingsAccountsConnectedAccountsRowRightContainer.tsx
@@ -14898,8 +14898,8 @@ msgstr "Tyrkysová"
 
 #. js-lingui-id: JnaRPe
 #: src/modules/spreadsheet-import/steps/components/MatchColumnsStep/components/ColumnGrid.tsx
-msgid "Twenty fields"
-msgstr "Pole Twenty"
+msgid "Optale CRM fields"
+msgstr "Pole Optale CRM"
 
 #. js-lingui-id: YIjS4q
 #: src/modules/ai/components/SettingsAgentModelCapabilities.tsx
@@ -15967,8 +15967,8 @@ msgstr ""
 
 #. js-lingui-id: nTuObL
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
-msgstr "Vítejte ve Twenty"
+msgid "Welcome to Optale CRM"
+msgstr "Vítejte ve Optale CRM"
 
 #. js-lingui-id: t8ZvkC
 #: src/pages/auth/SignInUp.tsx
