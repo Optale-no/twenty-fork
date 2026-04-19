@@ -20,6 +20,56 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/emails/send-invite-link.email.tsx
+msgid "Join your team on Optale CRM"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/emails/password-update-notify.email.tsx
+msgid "Connect to Optale CRM"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/WhatIsTwenty.tsx
+msgid "What is Optale CRM?"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Visit Optale's website"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Source"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Optale CRM source (forked from Twenty, AGPL-3.0)"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Optale AS · org.nr. 933 367 781"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Bergen, Norway"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
 msgid "Suspended Workspace"
 msgstr "Avstängt arbetsområde"
 
@@ -49,11 +99,6 @@ msgstr "Arbetsutrymmet kommer att inaktiveras om {remainingDays} {dayOrDays}, oc
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr "Om du vill fortsätta använda Twenty, vänligen uppdatera din prenumeration inom de nästa {remainingDays} {dayOrDays}."
-
-#. js-lingui-explicit-id
-#: src/emails/warn-suspended-workspace.email.tsx
 msgid "Update your subscription"
 msgstr "Uppdatera din prenumeration"
 
@@ -72,11 +117,6 @@ msgstr "{senderName} (<0>{senderEmail}</0>): Var vänlig och validera denna dom�
 #: src/emails/test.email.tsx
 msgid "Test email"
 msgstr "Test e-post"
-
-#. js-lingui-explicit-id
-#: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
-msgstr "Gå med i ditt team på Twenty"
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -124,11 +164,6 @@ msgid "If you did not initiate this change, please contact your workspace owner 
 msgstr "Om du inte initierade denna förändring, vänligen kontakta ägaren av ditt arbetsutrymme omedelbart."
 
 #. js-lingui-explicit-id
-#: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
-msgstr "Anslut till Twenty"
-
-#. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
 msgid "Reset your password 🗝"
 msgstr "Återställ ditt lösenord 🗝"
@@ -170,18 +205,8 @@ msgstr "Alla data i det här arbetsutrymmet har raderats permanent."
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
-msgstr "Om du vill använda Twenty igen kan du skapa ett nytt arbetsutrymme."
-
-#. js-lingui-explicit-id
-#: src/emails/clean-suspended-workspace.email.tsx
 msgid "Create a new workspace"
 msgstr "Skapa en ny arbetsyta"
-
-#. js-lingui-explicit-id
-#: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
-msgstr "Vad är Twenty?"
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -192,48 +217,3 @@ msgstr "Det är ett CRM, en mjukvara för att hjälpa företag att hantera sina 
 #: src/components/Footer.tsx
 msgid "Website"
 msgstr "Webbplats"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Visit Twenty's website"
-msgstr "Besök Twentys webbplats"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Github"
-msgstr "Github"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
-msgstr "Besök Twentys GitHub-repositorium"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "User guide"
-msgstr "Användarguide"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
-msgstr "Läs Twentys användarguide"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Developers"
-msgstr "Utvecklare"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
-msgstr "Besök Twentys utvecklardokumentation"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
-msgstr "Twenty.com, Public Benefit Corporation"
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "San Francisco / Paris"
-msgstr "San Francisco / Paris"
