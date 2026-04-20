@@ -20,56 +20,6 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Optale CRM"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/emails/password-update-notify.email.tsx
-msgid "Connect to Optale CRM"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Optale CRM again, you can create a new workspace."
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/WhatIsTwenty.tsx
-msgid "What is Optale CRM?"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Visit Optale's website"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Source"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Optale CRM source (forked from Twenty, AGPL-3.0)"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Optale AS · org.nr. 933 367 781"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/components/Footer.tsx
-msgid "Bergen, Norway"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/emails/warn-suspended-workspace.email.tsx
 msgid "Suspended Workspace"
 msgstr "Приостановленная рабочая область"
 
@@ -99,6 +49,11 @@ msgstr "Рабочее пространство будет деактивиро�
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
+msgid "If you wish to continue using Optale CRM, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/emails/warn-suspended-workspace.email.tsx
 msgid "Update your subscription"
 msgstr "Обновите вашу подписку"
 
@@ -117,6 +72,11 @@ msgstr "{senderName} (<0>{senderEmail}</0>): Пожалуйста, провер�
 #: src/emails/test.email.tsx
 msgid "Test email"
 msgstr "Тестовое письмо"
+
+#. js-lingui-explicit-id
+#: src/emails/send-invite-link.email.tsx
+msgid "Join your team on Optale CRM"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
@@ -164,6 +124,11 @@ msgid "If you did not initiate this change, please contact your workspace owner 
 msgstr "Если вы не инициировали это изменение, немедленно свяжитесь с владельцем вашего рабочего пространства."
 
 #. js-lingui-explicit-id
+#: src/emails/password-update-notify.email.tsx
+msgid "Connect to Optale CRM"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/emails/password-reset-link.email.tsx
 msgid "Reset your password 🗝"
 msgstr "Сбросьте ваш пароль 🗝"
@@ -205,8 +170,18 @@ msgstr "Все данные в этом рабочем пространстве 
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
+msgid "If you wish to use Optale CRM again, you can create a new workspace."
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/emails/clean-suspended-workspace.email.tsx
 msgid "Create a new workspace"
 msgstr "Создать новое рабочее пространство"
+
+#. js-lingui-explicit-id
+#: src/components/WhatIsTwenty.tsx
+msgid "What is Optale CRM?"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/WhatIsTwenty.tsx
@@ -217,3 +192,28 @@ msgstr "Это CRM, программное обеспечение для эфф�
 #: src/components/Footer.tsx
 msgid "Website"
 msgstr "Веб-сайт"
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Visit Optale's website"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Source"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Optale CRM source (forked from Twenty, AGPL-3.0)"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Optale AS · org.nr. 933 367 781"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/Footer.tsx
+msgid "Bergen, Norway"
+msgstr ""
