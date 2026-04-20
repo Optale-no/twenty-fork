@@ -37,14 +37,14 @@ jobs:
         id: meta
         env:
           REV_INPUT: ${{ inputs.revision }}
+          RUN_NUMBER: ${{ github.run_number }}
         run: |
           VERSION=$(python3 -c "import json; print(json.load(open('package.json'))['version'])")
           DATE=$(date -u '+%Y-%m-%d')
           if [ -n "$REV_INPUT" ]; then
             REV="$REV_INPUT"
           else
-            REV=$(git log --oneline --since='2026-04-19' | wc -l)
-            [ "$REV" -lt 1 ] && REV=1
+            REV="$RUN_NUMBER"
           fi
           TAG="v${VERSION}-orbital-${REV}"
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
