@@ -52,13 +52,7 @@ export const NavigationDrawerOtherSection = () => {
           Icon={IconSettings}
           onClick={handleSettingsClick}
         />
-        <NavigationDrawerItem
-          label={t`Documentation`}
-          to={getDocumentationUrl({
-            locale: currentWorkspaceMember?.locale,
-          })}
-          Icon={IconHelpCircle}
-        />
+        {/* OPTALE FORK (OPT-1021): Documentation link to Twenty's docs hidden */}
       </AnimatedExpandableContainer>
     </NavigationDrawerSection>
   );

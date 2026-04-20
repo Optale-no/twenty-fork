@@ -357,3 +357,25 @@ th[role='columnheader'] {
   background-color: rgba(255, 255, 255, 0.015) !important;
   border-color: rgba(255, 255, 255, 0.04) !important;
 }
+
+
+/* ============================================================================
+   OPTALE FORK (OPT-1021): All-black sidebar + subtle border separator
+   Makes sidebar visually distinct from main content area when both are #000.
+   ============================================================================ */
+
+/* Right border on the navigation drawer container — separates from main content.
+   Twenty's drawer uses linaria with class names like 'sNavDrawer*'. We target
+   any aside or div containing navigation items at the page-layout edge. */
+aside,
+[class*='NavigationDrawer'][class*='Container'],
+[class*='AppNavigationDrawer'] {
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Section dividers within the sidebar — keep subtle */
+[class*='NavigationDrawerSection'] + [class*='NavigationDrawerSection'] {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: 4px;
+  padding-top: 4px;
+}
