@@ -155,11 +155,10 @@ const useSettingsNavigationItems = (): SettingsNavigationSection[] => {
           label: t`Billing`,
           path: SettingsPath.Billing,
           Icon: IconCurrencyDollar,
-          isHidden:
-            !isBillingEnabled || !permissionMap[PermissionFlagType.WORKSPACE],
+          isHidden: true,
         },
         {
-          label: t`APIs & Webhooks`,
+          label: t`APIs`,
           path: SettingsPath.ApiWebhooks,
           Icon: IconApi,
           isHidden: !permissionMap[PermissionFlagType.API_KEYS_AND_WEBHOOKS],

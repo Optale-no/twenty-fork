@@ -1,6 +1,5 @@
 import { SettingsPageContainer } from '@/settings/components/SettingsPageContainer';
 import { SettingsApiKeysTable } from '@/settings/developers/components/SettingsApiKeysTable';
-import { SettingsWebhooksTable } from '@/settings/developers/components/SettingsWebhooksTable';
 import { PlaygroundSetupForm } from '@/settings/playground/components/PlaygroundSetupForm';
 import { StyledSettingsApiPlaygroundCoverImage } from '@/settings/playground/components/SettingsPlaygroundCoverImage';
 import { SubMenuTopBarContainer } from '@/ui/layout/page/components/SubMenuTopBarContainer';
@@ -47,13 +46,13 @@ export const SettingsApiWebhooks = () => {
 
   return (
     <SubMenuTopBarContainer
-      title={t`APIs & Webhooks`}
+      title={t`APIs`}
       links={[
         {
           children: <Trans>Workspace</Trans>,
           href: getSettingsPath(SettingsPath.Workspace),
         },
-        { children: <Trans>APIs & Webhooks</Trans> },
+        { children: <Trans>APIs</Trans> },
       ]}
     >
       <SettingsPageContainer>
@@ -86,27 +85,6 @@ export const SettingsApiWebhooks = () => {
                     size="small"
                     variant="secondary"
                     to={getSettingsPath(SettingsPath.NewApiKey)}
-                  />
-                </StyledButtonContainer>
-              </StyledContainer>
-            </Section>
-          </StyledSectionContainer>
-
-          <StyledSectionContainer>
-            <Section>
-              <H2Title
-                title={t`Webhooks`}
-                description={t`Establish Webhook endpoints for notifications on asynchronous events.`}
-              />
-              <StyledContainer isMobile={isMobile}>
-                <SettingsWebhooksTable />
-                <StyledButtonContainer>
-                  <Button
-                    Icon={IconPlus}
-                    title={t`Create webhook`}
-                    size="small"
-                    variant="secondary"
-                    to={getSettingsPath(SettingsPath.NewWebhook)}
                   />
                 </StyledButtonContainer>
               </StyledContainer>

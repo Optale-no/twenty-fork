@@ -9,7 +9,6 @@ import { type AvatarSize } from '@ui/display/avatar/types/AvatarSize';
 import { type AvatarType } from '@ui/display/avatar/types/AvatarType';
 import { type IconComponent } from '@ui/display/icon/types/IconComponent';
 import { ThemeContext } from '@ui/theme-constants';
-import { stringToThemeColorP3String } from '@ui/utilities';
 import { REACT_APP_SERVER_BASE_URL } from '@ui/utilities/config';
 import { type Nullable } from 'twenty-shared/types';
 import { getImageAbsoluteURI } from 'twenty-shared/utils';
@@ -98,8 +97,6 @@ export const Avatar = ({
     : null;
 
   const placeholderFirstChar = placeholder?.trim()?.charAt(0);
-  const isPlaceholderFirstCharEmpty =
-    !placeholderFirstChar || placeholderFirstChar === '';
   const placeholderChar = placeholderFirstChar?.toUpperCase() || '-';
 
   const showPlaceholder =
@@ -111,22 +108,9 @@ export const Avatar = ({
     }
   };
 
-  const fixedColor = isPlaceholderFirstCharEmpty
-    ? theme.font.color.tertiary
-    : (color ??
-      stringToThemeColorP3String({
-        string: placeholderColorSeed ?? '',
-        variant: 12,
-        theme,
-      }));
-  const fixedBackgroundColor = isPlaceholderFirstCharEmpty
-    ? theme.background.transparent.light
-    : (backgroundColor ??
-      stringToThemeColorP3String({
-        string: placeholderColorSeed ?? '',
-        variant: 4,
-        theme,
-      }));
+  const fixedColor = color ?? theme.font.color.tertiary;
+  const fixedBackgroundColor =
+    backgroundColor ?? theme.background.transparent.light;
 
   const showBackgroundColor = showPlaceholder;
 
