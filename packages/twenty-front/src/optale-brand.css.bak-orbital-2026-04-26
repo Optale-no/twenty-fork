@@ -1,0 +1,381 @@
+/* Optale CRM brand override layer — Orbital Infrastructure (OPT-V1-ORBITAL, OPT-1050)
+ *
+ * Replaces Solar Eclipse v3 (2026-04-19). Loaded AFTER twenty-ui/style.css +
+ * theme-light.css + theme-dark.css from index.tsx, so these rules win without
+ * editing upstream theme-constants.ts (keeps rebase cost low).
+ *
+ * Tokens come from ./orbital-tokens.css — a snapshot of the canonical file at
+ * /home/thor/AI-OS/Business/Soul/orbital-tokens.css. prepare.sh refreshes the
+ * snapshot from canonical before each docker build. Do NOT re-declare token
+ * values here; amend the spec and the canonical file instead.
+ */
+
+@import './orbital-tokens.css';
+
+/* ----------------------------------------------------------------------------
+   Body — void canvas + 60px engineering grid, Inter w/ cv01/ss03
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-ui) !important;
+  font-feature-settings: 'cv01', 'ss03' !important;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-void) !important;
+  background-image: var(--grid-bg) !important;
+  background-size: var(--grid-size) var(--grid-size) !important;
+  color: var(--text-primary) !important;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Primary CTA buttons — solid Engine Green, uppercase mono label, hard corners
+   (matches `.btn-primary-orbital` primitive from the tokens file)
+   -------------------------------------------------------------------------- */
+button[data-variant='primary'],
+button.primary,
+[class*='StyledPrimaryButton'],
+[class*='ButtonPrimary'] {
+  background: var(--signal-green) !important;
+  background-image: none !important;
+  color: var(--color-void) !important;
+  border: none !important;
+  border-radius: var(--radius-xs) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  transition: filter var(--motion-fast) !important;
+}
+
+button[data-variant='primary']:hover,
+button.primary:hover,
+[class*='StyledPrimaryButton']:hover,
+[class*='ButtonPrimary']:hover {
+  background: var(--signal-green) !important;
+  filter: brightness(0.9) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Secondary / ghost buttons — transparent + luminance-step hover
+   (retires the gradient-text treatment from Solar Eclipse)
+   -------------------------------------------------------------------------- */
+button[data-variant='secondary'][class*='ghost'],
+[class*='StyledGhostButton'] {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  border: 1px solid var(--border-standard) !important;
+  border-radius: var(--radius-xs) !important;
+  transition:
+    background-color var(--motion-fast),
+    border-color var(--motion-fast) !important;
+}
+
+button[data-variant='secondary'][class*='ghost']:hover,
+[class*='StyledGhostButton']:hover {
+  background: var(--color-surface-3) !important;
+  border-color: var(--border-emphasis) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Active nav / selected rows — luminance step + gold micro-underline
+   (gold used sparingly per spec: strategic/emphasis channel only)
+   -------------------------------------------------------------------------- */
+[aria-current='page'],
+[aria-selected='true'],
+[data-active='true'] {
+  position: relative;
+  background: var(--color-surface-2) !important;
+  background-image: none !important;
+  color: var(--text-primary) !important;
+}
+
+[aria-current='page']::after,
+[aria-selected='true']::after,
+[data-active='true']::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--signal-gold);
+}
+
+/* ----------------------------------------------------------------------------
+   Nav labels — JetBrains Mono uppercase for aerospace feel
+   -------------------------------------------------------------------------- */
+nav a,
+[role='navigation'] a,
+[class*='NavItem'] {
+  font-family: var(--font-ui) !important;
+  letter-spacing: 0 !important;
+}
+
+nav [class*='NavLabel'],
+[class*='NavSectionTitle'],
+[class*='SectionTitle'] {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Cards / surfaces — DISABLED (too broad, was matching layout containers and
+   breaking RecordTableRow / ViewBarCard / SurfaceXxx rendering).
+   Re-enable with narrower selectors once we've mapped Twenty's actual
+   component class names via DevTools.
+   -------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+   Dividers — subtle wireframe weight
+   -------------------------------------------------------------------------- */
+hr,
+[class*='Divider'],
+[class*='Separator'] {
+  border: 0 !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  background: transparent !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Login surface (Authelia sits in front in prod, but keep fallback sensible)
+   -------------------------------------------------------------------------- */
+[class*='LoginCard'],
+[class*='SignInUp'] {
+  background-color: var(--color-surface-1) !important;
+  border: 1px solid var(--border-standard) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Sidebar nav icons — desaturate Twenty's per-object rainbow (Companies=blue,
+   People=red, Tasks=green, etc.) to orbital monochrome. Keep signal-green
+   only for the active item. Multi-tenant safe: any SubCo inherits uniform
+   icon treatment without touching per-workspace DB color config.
+   -------------------------------------------------------------------------- */
+
+/* All nav drawer icons → cream, regardless of DB iconColor */
+aside [class*='NavigationDrawer'] svg,
+aside [class*='TintedIconTile'] svg,
+nav [class*='NavigationDrawer'] svg,
+nav [class*='TintedIconTile'] svg,
+[class*='navigation-drawer-item'] svg,
+[class*='NavigationMenuItem'] svg {
+  color: var(--text-primary) !important;
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+/* TintedIconTile background — neutralize the tinted background too */
+[class*='TintedIconTile'] {
+  background: var(--color-surface-1) !important;
+  border: 1px solid var(--border-standard) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Active nav item gets signal-green icon tint */
+[aria-current='page'] svg,
+[data-active='true'] svg,
+.navigation-drawer-item.active svg,
+[class*='navigation-drawer-item'][data-selected='true'] svg {
+  color: var(--signal-green) !important;
+}
+
+/* ----------------------------------------------------------------------------
+   Status dots — expose the canonical primitive for any [data-signal] node
+   (mirrors `.status-dot-orbital` from the tokens file)
+   -------------------------------------------------------------------------- */
+[data-signal] {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+}
+[data-signal='live'] {
+  background: var(--signal-green);
+  box-shadow: var(--glow-green);
+}
+[data-signal='deploy'] {
+  background: var(--signal-gold);
+  box-shadow: var(--glow-gold);
+}
+[data-signal='incident'] {
+  background: var(--signal-alert);
+  box-shadow: var(--glow-alert);
+}
+[data-signal='idle'] {
+  background: var(--text-tertiary);
+}
+
+/* ============================================================================
+   Button variant matrix — Button.tsx now emits data-variant/data-accent/data-size
+   Primary = signal-green solid, secondary = ghost outline, tertiary = text link.
+   Danger accent overrides the base color per-variant.
+   ============================================================================ */
+
+/* PRIMARY — solid signal-green, black text, uppercase mono */
+button[data-variant='primary'] {
+  background: var(--signal-green) !important;
+  background-image: none !important;
+  color: var(--color-void) !important;
+  border: none !important;
+  border-radius: var(--radius-xs) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+button[data-variant='primary']:hover {
+  background: var(--signal-green) !important;
+  filter: brightness(0.9) !important;
+}
+button[data-variant='primary'][data-accent='danger'] {
+  background: var(--signal-alert) !important;
+  color: var(--color-void) !important;
+}
+button[data-variant='primary'][data-accent='blue'] {
+  background: var(--signal-gold) !important;
+  color: var(--color-void) !important;
+}
+
+/* SECONDARY — transparent + emphasis border, uppercase mono */
+button[data-variant='secondary'] {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  border: 1px solid var(--border-emphasis) !important;
+  border-radius: var(--radius-xs) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+button[data-variant='secondary']:hover {
+  background: var(--color-surface-2) !important;
+  border-color: var(--text-secondary) !important;
+}
+
+/* TERTIARY — link-style, cream-muted */
+button[data-variant='tertiary'] {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  font-family: var(--font-ui) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+button[data-variant='tertiary']:hover {
+  color: var(--text-primary) !important;
+  background: var(--color-surface-1) !important;
+}
+
+/* ============================================================================
+   Nav sidebar — Companies/People/etc row treatment
+   NavigationDrawerItem renders <a> or <Link> with aria-current on active.
+   ============================================================================ */
+
+/* Nav labels — keep Inter (readable) but give section titles ("Workspace", "Other") the uppercase mono eyebrow treatment */
+nav [class*='SectionTitle'],
+nav [class*='NavSectionTitle'],
+nav [class*='GroupTitle'],
+aside [class*='SectionTitle'] {
+  font-family: var(--font-mono) !important;
+  font-size: 0.625rem !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Filter / Sort / Options top-right buttons — uppercase mono eyebrow */
+[class*='ViewBarFilter'] button,
+[class*='ViewBarSort'] button,
+[class*='ViewBarOptions'] button,
+[class*='RecordTableOptions'] button,
+[class*='RecordIndexTableHeader'] button[data-variant='tertiary'] {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+}
+
+/* Table column headers — uppercase mono eyebrow */
+[class*='RecordTableHeader'] [class*='ColumnHead'],
+[class*='RecordTableColumnHead'],
+th[role='columnheader'] {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: var(--tracking-meta-upper) !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================================================
+   Dashboard edit-mode grid — dim placeholder cells for less visual noise
+   react-grid-layout draws drop targets via .react-grid-placeholder + bg pattern.
+   ============================================================================ */
+
+/* Drop-target placeholder when dragging widgets */
+.react-grid-placeholder {
+  background: rgba(0, 255, 170, 0.08) !important;
+  border: 1px dashed rgba(0, 255, 170, 0.25) !important;
+  border-radius: var(--t-border-radius-md, 4px) !important;
+  opacity: 1 !important;
+}
+
+/* Background grid lines on the page-layout wrapper during edit */
+[class*='PageLayoutGridLayout'][data-edit-mode='true'],
+.react-grid-layout.editing,
+.react-grid-layout > [class*='editing'] {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px) !important;
+}
+
+/* Empty cell hover/preview state */
+[class*='PageLayoutGridLayout'] [class*='emptyCell'],
+[class*='PageLayoutGridLayout'] [class*='dropZone'],
+[class*='GridCell'][data-empty='true'] {
+  background-color: rgba(255, 255, 255, 0.015) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+
+/* ============================================================================
+   OPTALE FORK (OPT-1021): All-black sidebar + subtle border separator
+   Makes sidebar visually distinct from main content area when both are #000.
+   ============================================================================ */
+
+/* Right border on the navigation drawer container — separates from main content.
+   Twenty's drawer uses linaria with class names like 'sNavDrawer*'. We target
+   any aside or div containing navigation items at the page-layout edge. */
+aside,
+[class*='NavigationDrawer'][class*='Container'],
+[class*='AppNavigationDrawer'] {
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Section dividers within the sidebar — keep subtle */
+[class*='NavigationDrawerSection'] + [class*='NavigationDrawerSection'] {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: 4px;
+  padding-top: 4px;
+}

@@ -1,0 +1,192 @@
+/* ============================================================================
+   Optale Graphite Semantic — canonical design tokens (OPT-V2-GRAPHITE)
+   Spec: Business/Soul/visual-profile-graphite-semantic.md
+   Replaces: Business/Soul/orbital-tokens.css (retired 2026-04-25)
+
+   IMPORT this file at the top of every Optale fork/app stylesheet. Do NOT
+   duplicate values locally — if a fork needs a variation, propose an
+   amendment to the spec and update this file once. Single source of truth.
+
+   Drop-in shape: keeps the same token NAMES that orbital-tokens.css used
+   (`--color-void`, `--text-primary`, `--signal-green`, …) so that the
+   downstream `optale-brand.css` files in twenty-fork, plane-fork, and
+   librechat keep working with minimal edits — only the VALUES change.
+
+   Dual-mode: `:root` carries light values (paper canvas), `.dark` and
+   `:root[data-theme="dark"]` carry dark values (graphite-3 canvas, NOT
+   pure black — pure black belongs to retired Orbital).
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+ *  LIGHT MODE — paper canvas (default)
+ * ─────────────────────────────────────────────────────────────────────── */
+:root {
+  /* --- Base scale (Graphite Semantic palette) ----------------------- */
+  --paper-0:    #ebe9df;       /* warm off-white canvas */
+  --paper-1:    #dfddd3;       /* warm page surface */
+  --paper-2:    #d6d3c8;       /* module fill */
+  --stone-1:    #c8c5bb;       /* secondary surface */
+  --stone-2:    #a9aca6;       /* muted semantic surface */
+  --graphite-1: #70716c;       /* muted text / low signal */
+  --graphite-2: #4f4d48;       /* dark module / escalation */
+  --graphite-3: #383a39;       /* operating graphite */
+  --ink-1:      #171819;       /* text and primary action */
+  --ink-0:      #070808;       /* highest contrast surface */
+
+  /* --- Canvas + surfaces (drop-in compat with orbital naming) ------- */
+  --color-void:      var(--paper-0);     /* canvas — paper-0 in light */
+  --color-canvas:    var(--paper-0);
+  --color-surface-1: var(--paper-1);     /* L1 — cards, chrome */
+  --color-surface-2: var(--paper-2);     /* L2 — hover, nested */
+  --color-surface-3: var(--stone-1);     /* L3 — active, focus */
+
+  /* --- Borders ------------------------------------------------------ */
+  --border-subtle:   rgba(23, 24, 25, 0.06);
+  --border-standard: rgba(23, 24, 25, 0.10);
+  --border-emphasis: rgba(23, 24, 25, 0.18);
+
+  /* --- Text --------------------------------------------------------- */
+  --text-primary:    var(--ink-1);       /* body */
+  --text-secondary:  var(--graphite-2);  /* meta, captions */
+  --text-tertiary:   var(--graphite-1);  /* disabled, idle */
+  --text-quaternary: var(--stone-2);     /* ghost labels */
+
+  /* --- Signals — instrumentation (NOT decoration) ------------------- */
+  --state-live:    #9da6a2;    /* healthy operation (replaces #00ffaa) */
+  --state-on:      #c8d0ca;    /* available / running */
+  --state-review:  #b9b3a7;    /* human decision needed */
+  --state-warning: #c3ad87;    /* pending / caution (replaces #facc15) */
+  --state-risk:    #796f68;    /* escalated / priority */
+  --state-alert:   #8a514c;    /* critical only (replaces #f36458) */
+  --state-info:    #9fb7c0;    /* cool data signal */
+
+  /* Drop-in compat aliases for Orbital `--signal-*` */
+  --signal-green:  var(--state-live);
+  --signal-gold:   var(--state-warning);
+  --signal-alert:  var(--state-alert);
+
+  /* --- No glows. Graphite uses surface tone for elevation, not blur. */
+  --glow-green: none;
+  --glow-gold:  none;
+  --glow-alert: none;
+
+  /* --- Typography (LOCKED 2026-04-25) ------------------------------- */
+  --font-display: 'Switzer', system-ui, sans-serif;
+  --font-ui:      'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Display ladder (Switzer, modest negative tracking) */
+  --type-display-xxl: 600 clamp(4rem, 9vw, 8rem)/0.98 var(--font-display);
+  --type-display-xl:  600 clamp(3rem, 6vw, 5rem)/1.02 var(--font-display);
+  --type-display-lg:  600 clamp(2.25rem, 4vw, 3.5rem)/1.06 var(--font-display);
+  --type-display-md:  500 clamp(1.75rem, 3vw, 2.5rem)/1.12 var(--font-display);
+  --type-display-sm:  500 clamp(1.25rem, 2vw, 1.75rem)/1.2 var(--font-display);
+
+  /* Body ladder (Inter, natural tracking) — same as Orbital */
+  --type-body-lg:  400 1.125rem/1.55 var(--font-ui);
+  --type-body:     400 1rem/1.55     var(--font-ui);
+  --type-body-sm:  400 0.875rem/1.5  var(--font-ui);
+  --type-meta:     400 0.8125rem/1.45 var(--font-ui);
+  --type-caption:  400 0.75rem/1.4   var(--font-ui);
+
+  /* Mono variants (IBM Plex Mono, +0.06–0.08em tracking on uppercase) */
+  --type-mono-sm:   500 0.75rem/1.2   var(--font-mono);
+  --type-mono-xs:   500 0.6875rem/1.15 var(--font-mono);
+  --type-telemetry: 500 0.625rem/1.0  var(--font-mono);
+
+  /* --- Letterforms ---------------------------------------------------
+   * Graphite Semantic is editorial, NOT aerospace-compressed.
+   * Tracking is gentler than Orbital. */
+  --tracking-display:       -0.015em;
+  --tracking-display-tight: -0.02em;
+  --tracking-body:          0;
+  --tracking-meta-upper:    0.06em;
+  --tracking-meta-upper-wide: 0.12em;
+
+  /* --- Radii — editorial, NOT aerospace-hard --------------------------
+   * Graphite Semantic uses 6–8px radius for cards, buttons, inputs.
+   * The orbital 0–2px values are retired. */
+  --radius-none: 0;
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   6px;    /* default for cards/buttons */
+  --radius-lg:   8px;    /* large module panels */
+
+  /* --- Spacing scale (preserved from Orbital — still works) -------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* --- Grid is OFF by default in Graphite -----------------------------
+   * The 60px engineering grid was Orbital. Graphite uses clean paper
+   * with module dividers, not wallpapered grid. Forks that explicitly
+   * want grid can opt in by setting --grid-bg locally. */
+  --grid-size: 60px;
+  --grid-bg:   none;
+
+  /* --- Motion (preserved from Orbital — same easing curves) -------- */
+  --motion-instant: 80ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-fast:    180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-medium:  320ms cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-slow:    520ms cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+ *  DARK MODE — graphite-3 canvas, lime accent (sparingly, sparingly)
+ * ─────────────────────────────────────────────────────────────────────── */
+:root[data-theme='dark'],
+.dark,
+.theme-dark {
+  /* --- Base scale (mirror of light, warm dark NOT cold black) ------- */
+  --paper-0:    #1a1c1d;       /* warm dark canvas */
+  --paper-1:    #232527;       /* page surface */
+  --paper-2:    #2c2e30;       /* module fill */
+  --stone-1:    #3a3c3e;       /* secondary surface */
+  --stone-2:    #4f5153;       /* muted semantic surface */
+  --graphite-1: #8a8c8e;       /* muted text */
+  --graphite-2: #b1b3b5;       /* dark module / escalation in dark */
+  --graphite-3: #c8cacc;       /* operating graphite, lifted */
+  --ink-1:      #ebe9df;       /* text — paper-0 of light becomes ink in dark */
+  --ink-0:      #f4f4f0;       /* highest contrast */
+
+  --color-void:      var(--paper-0);
+  --color-canvas:    var(--paper-0);
+  --color-surface-1: var(--paper-1);
+  --color-surface-2: var(--paper-2);
+  --color-surface-3: var(--stone-1);
+
+  --border-subtle:   rgba(235, 233, 223, 0.08);
+  --border-standard: rgba(235, 233, 223, 0.12);
+  --border-emphasis: rgba(235, 233, 223, 0.20);
+
+  --text-primary:    var(--ink-1);
+  --text-secondary:  var(--graphite-2);
+  --text-tertiary:   var(--graphite-1);
+  --text-quaternary: var(--stone-2);
+
+  /* Instrumentation lifted ~10% L for legibility on dark surfaces.
+   * --state-live in dark mode is the LIME ACCENT — designer-locked
+   * 2026-04-26: same family as the website hero glow, used sparingly
+   * on primary CTAs and live indicators. */
+  --state-live:    #abc275;    /* lime accent — primary chart series, CTAs */
+  --state-on:      #b8c1bc;
+  --state-review:  #c9c3b7;
+  --state-warning: #d4be99;
+  --state-risk:    #98908a;
+  --state-alert:   #b06b65;
+  --state-info:    #b0c8d0;
+
+  --signal-green:  var(--state-live);
+  --signal-gold:   var(--state-warning);
+  --signal-alert:  var(--state-alert);
+
+  --glow-green: none;
+  --glow-gold:  none;
+  --glow-alert: none;
+}
