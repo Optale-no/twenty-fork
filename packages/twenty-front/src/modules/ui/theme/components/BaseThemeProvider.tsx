@@ -23,10 +23,14 @@ export const BaseThemeProvider = ({ children }: BaseThemeProviderProps) => {
     persistedColorScheme === 'System'
       ? systemColorScheme
       : persistedColorScheme;
+  const themeProviderScheme: 'light' | 'dark' =
+    effectiveColorScheme === 'Light' ? 'light' : 'dark';
 
   return (
     <ThemeSchemeContext.Provider value={setPersistedColorScheme}>
-      <ThemeProvider colorScheme="dark">{children}</ThemeProvider>
+      <ThemeProvider colorScheme={themeProviderScheme}>
+        {children}
+      </ThemeProvider>
     </ThemeSchemeContext.Provider>
   );
 };
