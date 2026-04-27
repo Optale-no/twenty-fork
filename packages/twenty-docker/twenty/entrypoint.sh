@@ -16,11 +16,11 @@ inject_runtime_env() {
 EOF
 )
         echo "$CONFIG_BLOCK" | sed -i.bak '
-          /<!-- BEGIN: Optale CRM Config -->/,/<!-- END: Optale CRM Config -->/{
-            /<!-- BEGIN: Optale CRM Config -->/!{
+          /<!-- BEGIN: Optale CRM Config/,/<!-- END: Optale CRM Config -->/{
+            /<!-- BEGIN: Optale CRM Config/!{
               /<!-- END: Optale CRM Config -->/!d
             }
-            /<!-- BEGIN: Optale CRM Config -->/r /dev/stdin
+            /<!-- BEGIN: Optale CRM Config/r /dev/stdin
             /<!-- END: Optale CRM Config -->/d
           }
         ' "${INDEX_HTML}" || true

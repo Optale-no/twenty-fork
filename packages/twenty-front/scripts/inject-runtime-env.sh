@@ -16,11 +16,11 @@ EOF
 # Use sed to replace the config block in index.html
 # Using pattern space to match across multiple lines
 echo "$CONFIG_BLOCK" | sed -i.bak '
-  /<!-- BEGIN: Optale CRM Config -->/,/<!-- END: Optale CRM Config -->/{
-    /<!-- BEGIN: Optale CRM Config -->/!{
+  /<!-- BEGIN: Optale CRM Config/,/<!-- END: Optale CRM Config -->/{
+    /<!-- BEGIN: Optale CRM Config/!{
       /<!-- END: Optale CRM Config -->/!d
     }
-    /<!-- BEGIN: Optale CRM Config -->/r /dev/stdin
+    /<!-- BEGIN: Optale CRM Config/r /dev/stdin
     /<!-- END: Optale CRM Config -->/d
   }
 ' build/index.html

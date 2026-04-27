@@ -31,7 +31,7 @@ export function generateFrontConfig(): void {
     let indexContent = fs.readFileSync(indexPath, 'utf8');
 
     indexContent = indexContent.replace(
-      /<!-- BEGIN: Optale CRM Config -->[\s\S]*?<!-- END: Optale CRM Config -->/,
+      /<!-- BEGIN: Optale CRM Config[\s\S]*?<!-- END: Optale CRM Config -->/,
       configString,
     );
 
