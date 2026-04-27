@@ -1,4 +1,5 @@
 import { t } from '@lingui/core/macro';
+import { ORM_APP_PATH } from '~/pages/orm/constants/OrmAppPath';
 import { AppBasePath, AppPath, SettingsPath } from 'twenty-shared/types';
 
 enum SettingsPathPrefixes {
@@ -35,6 +36,8 @@ export const getPageTitleFromPath = (pathname: string): string => {
       return t`Create Workspace`;
     case AppPath.CreateProfile:
       return t`Create Profile`;
+    case ORM_APP_PATH:
+      return 'ORM - Ontology Relationship Management';
     case SettingsPathPrefixes.Experience:
       return t`Experience - Settings`;
     case SettingsPathPrefixes.Accounts:

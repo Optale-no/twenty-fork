@@ -5,7 +5,9 @@ echo "Injecting runtime environment variables into index.html..."
 CONFIG_BLOCK=$(cat << EOF
     <script id="twenty-env-config">
       window._env_ = {
-        REACT_APP_SERVER_BASE_URL: "$REACT_APP_SERVER_BASE_URL"
+        REACT_APP_SERVER_BASE_URL: "$REACT_APP_SERVER_BASE_URL",
+        REACT_APP_ORM_GRAPH_URL: "$REACT_APP_ORM_GRAPH_URL",
+        REACT_APP_OAG_API_BASE_URL: "$REACT_APP_OAG_API_BASE_URL"
       };
     </script>
     <!-- END: Optale CRM Config -->

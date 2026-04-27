@@ -21,3 +21,24 @@ export const REACT_APP_SERVER_BASE_URL =
   window._env_?.REACT_APP_SERVER_BASE_URL ||
   process.env.REACT_APP_SERVER_BASE_URL ||
   getDefaultUrl();
+
+export const REACT_APP_ORM_GRAPH_URL =
+  window._env_?.REACT_APP_ORM_GRAPH_URL ||
+  process.env.REACT_APP_ORM_GRAPH_URL ||
+  '';
+
+const getDefaultOagApiBaseUrl = () => {
+  if (
+    window.location.hostname.endsWith('localhost') ||
+    window.location.hostname.endsWith('127.0.0.1')
+  ) {
+    return 'http://127.0.0.1:3601';
+  }
+
+  return 'https://vault-api.optale.no';
+};
+
+export const REACT_APP_OAG_API_BASE_URL =
+  window._env_?.REACT_APP_OAG_API_BASE_URL ||
+  process.env.REACT_APP_OAG_API_BASE_URL ||
+  getDefaultOagApiBaseUrl();

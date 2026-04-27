@@ -5,6 +5,7 @@ import { VerifyLoginTokenEffect } from '@/auth/components/VerifyLoginTokenEffect
 
 import { VerifyEmailEffect } from '@/auth/components/VerifyEmailEffect';
 import indexAppPath from '@/navigation/utils/indexAppPath';
+import { ORM_APP_PATH } from '~/pages/orm/constants/OrmAppPath';
 import { BlankLayout } from '@/ui/layout/page/components/BlankLayout';
 import { DefaultLayout } from '@/ui/layout/page/components/DefaultLayout';
 import { AppPath } from 'twenty-shared/types';
@@ -97,6 +98,12 @@ const BookCall = lazy(() =>
 const StandalonePageLayoutPage = lazy(() =>
   import('~/pages/page-layout/StandalonePageLayoutPage').then((module) => ({
     default: module.StandalonePageLayoutPage,
+  })),
+);
+
+const OrmGraph = lazy(() =>
+  import('~/pages/orm/OrmGraph').then((module) => ({
+    default: module.OrmGraph,
   })),
 );
 
@@ -210,6 +217,14 @@ export const useCreateAppRouter = (
             }
           />
           <Route path={indexAppPath.getIndexAppPath()} element={<></>} />
+          <Route
+            path={ORM_APP_PATH}
+            element={
+              <LazyRoute>
+                <OrmGraph />
+              </LazyRoute>
+            }
+          />
           <Route
             path={AppPath.RecordIndexPage}
             element={

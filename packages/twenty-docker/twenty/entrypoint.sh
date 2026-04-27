@@ -3,8 +3,28 @@ set -e
 
 inject_runtime_env() {
     INDEX_HTML=/app/packages/twenty-server/dist/front/index.html
-    if [ -n "${REACT_APP_SERVER_BASE_URL}" ] && [ -f "${INDEX_HTML}" ]; then
-        sed -i "s|// This will be overwritten|REACT_APP_SERVER_BASE_URL: \"${REACT_APP_SERVER_BASE_URL}\"|" "${INDEX_HTML}" || true
+    if [ -f "${INDEX_HTML}" ]; then
+        CONFIG_BLOCK=$(cat << EOF
+    <script id="twenty-env-config">
+      window._env_ = {
+        REACT_APP_SERVER_BASE_URL: "${REACT_APP_SERVER_BASE_URL}",
+        REACT_APP_ORM_GRAPH_URL: "${REACT_APP_ORM_GRAPH_URL}",
+        REACT_APP_OAG_API_BASE_URL: "${REACT_APP_OAG_API_BASE_URL}"
+      };
+    </script>
+    <!-- END: Optale CRM Config -->
+EOF
+)
+        echo "$CONFIG_BLOCK" | sed -i.bak '
+          /<!-- BEGIN: Optale CRM Config -->/,/<!-- END: Optale CRM Config -->/{
+            /<!-- BEGIN: Optale CRM Config -->/!{
+              /<!-- END: Optale CRM Config -->/!d
+            }
+            /<!-- BEGIN: Optale CRM Config -->/r /dev/stdin
+            /<!-- END: Optale CRM Config -->/d
+          }
+        ' "${INDEX_HTML}" || true
+        rm -f "${INDEX_HTML}.bak"
     fi
 }
 

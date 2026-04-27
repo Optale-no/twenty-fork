@@ -1,15 +1,15 @@
-name: Optale ARM — Build & push to GHCR
+name: Optale ORM — Build & push to GHCR
 
 on:
   push:
     branches: [main, optale/main, master]
-    tags: ["v*-graphite-*"]
+    tags: ['v*-graphite-*']
   workflow_dispatch:
     inputs:
       revision:
-        description: "Graphite revision number (e.g. 1 for v1.23.5-graphite-1)"
+        description: 'Graphite revision number (e.g. 1 for v1.23.5-graphite-1)'
         required: false
-        default: ""
+        default: ''
 
 permissions:
   contents: read
@@ -20,6 +20,8 @@ env:
   OWNER: optale-no
   IMAGE_NAME: twenty-fork
   REACT_APP_SERVER_BASE_URL: https://arm.optale.no
+  REACT_APP_ORM_GRAPH_URL: ''
+  REACT_APP_OAG_API_BASE_URL: https://vault-api.optale.no
 
 concurrency:
   group: optale-build-${{ github.ref }}
@@ -71,7 +73,7 @@ jobs:
           IMAGE_NAME_VAR: ${{ env.IMAGE_NAME }}
           TAG_VAR: ${{ steps.meta.outputs.tag }}
           DATE_VAR: ${{ steps.meta.outputs.date }}
-          BRANCH_OK: ${{ github.ref == format('refs/heads/{0}', 'master') || github.ref == format('refs/heads/{0}', 'optale/main') }}
+          BRANCH_OK: ${{ github.ref == format('refs/heads/{0}', 'main') || github.ref == format('refs/heads/{0}', 'master') || github.ref == format('refs/heads/{0}', 'optale/main') }}
         run: |
           BASE="${REGISTRY_VAR}/${OWNER_VAR}/${IMAGE_NAME_VAR}"
           TAGS="${BASE}:${TAG_VAR}"
@@ -92,6 +94,8 @@ jobs:
           build-args: |
             APP_VERSION=${{ steps.meta.outputs.tag }}
             REACT_APP_SERVER_BASE_URL=${{ env.REACT_APP_SERVER_BASE_URL }}
+            REACT_APP_ORM_GRAPH_URL=${{ env.REACT_APP_ORM_GRAPH_URL }}
+            REACT_APP_OAG_API_BASE_URL=${{ env.REACT_APP_OAG_API_BASE_URL }}
           cache-from: type=gha,scope=optale-twenty
           cache-to: type=gha,scope=optale-twenty,mode=max
           platforms: linux/amd64
